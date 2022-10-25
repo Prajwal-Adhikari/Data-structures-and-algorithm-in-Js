@@ -74,3 +74,44 @@ function increment(number){
 increment(number);
 console.log(number);
 //as we are now dealing with a reference type variable we see increment in value of number object when we run it through the increment function.
+
+//Adding and removing properties
+
+const car = {
+    brand:"toyota",
+    model:"S",
+    price:1000,
+    deleteme:"you can delete me"
+}
+
+console.log(car);
+//lets add some property to our object
+car.builtIn = 1990;
+console.log(car.builtIn);
+
+//lets delete the deleteme property
+delete car['deleteme'];
+console.log(car);
+
+//more examples
+car['added-new'] = "this is addition having - .";
+console.log(car);
+
+//Enumerating properties
+
+const myCar = {
+    brand:"toyota",
+    model:"S",
+    price:1000,
+    deleteme:"you can delete me"
+}
+
+for(let key in myCar){
+    console.log(key);
+}
+for(let key in myCar){
+    console.log(key,myCar[key]);
+}
+
+const keys = Object.keys(myCar);
+console.log(keys);
