@@ -115,3 +115,19 @@ for(let key in myCar){
 
 const keys = Object.keys(myCar);
 console.log(keys);
+
+//Abstraction
+// - Private properties and methods
+
+function charginStation(device){
+    this.device = device;
+    let charging = () => console.log(`charging station is chargin ${this.device}`); //this method is private and is not accessible outside.
+    this.operation = () => {
+        return charging();  //private method charging() is however accessible by the children function due to closure.
+    }
+
+}
+
+let mobile = new charginStation("Iphone");
+console.log(mobile.device);
+console.log(mobile.operation());
