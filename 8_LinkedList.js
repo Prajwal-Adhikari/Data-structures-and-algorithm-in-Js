@@ -48,11 +48,12 @@ console.log(`Initially the size of the linkedlist is : ${list.getSize()}`);
 console.log("Printing the list");
 list.print();
 console.log("Prepend operation");
+list.print();
+list.prepend("apple");
+list.prepend(1);
 list.prepend(5);
 list.prepend(50);
-list.prepend(57);
-list.prepend(54);
-list.prepend(5);
-list.print();
+list.prepend(55);
 
 console.log(list.getSize());
+list.print();
