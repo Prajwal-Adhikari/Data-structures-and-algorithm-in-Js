@@ -27,6 +27,19 @@ class LinkedList{
         }
         this.size++;
     }
+    append(value){
+        const node = new Node(value);
+        if(this.isEmpty()){
+            this.head = node;
+        }else{
+            let prev = this.head;
+            while(prev.next){
+                prev = prev.next;
+            }
+            prev.next = node;
+        }
+        this.size++;
+    }
     print(){
         if(list.isEmpty()){
             console.log("List is empty");
@@ -49,11 +62,16 @@ console.log("Printing the list");
 list.print();
 console.log("Prepend operation");
 list.print();
-list.prepend("apple");
+list.prepend(0);
 list.prepend(1);
-list.prepend(5);
-list.prepend(50);
-list.prepend(55);
+list.prepend(2);
+list.prepend(3);
+list.prepend(4);
 
+console.log(list.getSize());
+list.print();
+list.append("a");
+list.append("a");
+list.append("a");
 console.log(list.getSize());
 list.print();
